@@ -1,18 +1,29 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <input type="text" v-model="box">
+    <button @click="$router.push({ postnumber: 'Home' })" class="cp_btn">button</button>
+    <!-- pushの中がどういう意味かわかってません -->
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import axios from "axios"
 export default {
-  name: 'Home',
-  components: {
-    HelloWorld
+  props: ["number"], //propsもどういう仕組かまだ理解できてないです
+  data() {
+    return {
+      box: "",
+    };
+  },
+  async created() {
+    const item = await axios.get(
+      `https://https://apis.postcode-jp.com/api/v4/postcodekGyZ1L8sV96yHk6TCm2TNpBYxiaGTzi7PBNoXmZ` 
+    ); //apiのアドレス？がどのクエリを使うのか、どれを使うかをどうやって見極めるかがわかりません
+    const numberData = item.data　//constの先からどう記入していいのかわからないです
   }
+}
+
+methods: {
+
 }
 </script>
