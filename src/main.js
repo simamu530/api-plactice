@@ -6,13 +6,16 @@ import Home from './views/Home.vue'
 
 Vue.use(VueRouter); //VueでRouterという昨日を使うというコマンド？
 
-// const router = [
-//   {
-//     path: "./views",
-//     name: "Home",
-//     component: Home,
-//   }
-// ];
+const routes = [
+  {
+    path: "./views",
+    name: "Home",
+    component: Home,
+  }
+];
+
+
+  console.log(routes)
 
 // const router = new VueRouter({
 //   mode: "history",
