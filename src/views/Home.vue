@@ -2,7 +2,7 @@
   <div class="home">
     <input type="text" v-model="postCode">
     <button @click="getAdressPostCode" class="cp_btn">button</button>
-    <p>{{ getCity }}</p>
+    <p>{{ this.getCity }}</p>
     <p>{{ postCode }}</p>
     <!-- pushの中がどういう意味かわかってません｜APIを利用うするうえで必要なものだとおもっていた -->
   </div>
@@ -25,8 +25,8 @@ export default {
     const numberData = item.data;
     console.log(numberData);
     console.log(this.postCode);
-    const getCity = item.data[0].city;
-    console.log(getCity);
+    this.getCity = item.data[0].city;
+    
     }
   },
 
